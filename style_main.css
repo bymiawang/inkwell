@@ -147,3 +147,55 @@ body {
     border-radius: 4px;
     color: var(--offwhite);
 }
+.container{
+    margin-top: 130px;
+    padding: 0px 10%;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.masthead{
+    background-color: var(--blue);
+
+}
+.mastheadtext{
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--offwhite);
+}
+.sidebar{
+    padding: 40px 40px ;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.submission{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+input[type=text] {
+    border: 1px solid var(--offwhiteshadow);
+
+}
+
+
+.submissiontitle{
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px 4px 0px 0px;
+    color: var(--brown);
+}
+.submissionbody{
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px 0px 4px 4px;
+    color: var(--brown);
+}
