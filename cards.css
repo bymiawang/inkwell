@@ -1,0 +1,21 @@
+
+.cards{
+    padding: 40px 20px 0px 0px;
+}
+.card{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.thumbnail{
+    max-width:30%;
+}
+.cardcontent{
+    max-width:70%;
+    display: flex;
+    flex-direction: column;
+
+}
+.cardtext{
+padding: 10px 0px;
+}

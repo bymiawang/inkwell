@@ -1,0 +1,70 @@
+.container{
+    margin-top: 130px;
+    padding: 0px 10%;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border-right: 1px var(--offwhiteshadow);
+    border-style: none solid none none;
+
+}
+.masthead{
+    background-color: var(--blue);
+
+
+}
+.mastheadtext{
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--offwhite);
+}
+.sidebar{
+    padding: 40px 40px ;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 25%;
+}
+.submission{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+input[type=text] {
+    display: flex;
+    border: 1px solid var(--offwhiteshadow);
+
+}
+
+.submissiontitle{
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px 4px 0px 0px;
+    color: var(--brown);
+}
+.submissionbody{
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px 0px 4px 4px;
+    color: var(--brown);
+}
+.submitbutton{
+    display: flex;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    border-radius: 4px;
+    color: var(--offwhite);
+    border-style: solid ;
+    border: 1px var(--blue);
+
+}
