@@ -16,7 +16,7 @@
 }
 .thumbnail img {
     flex-shrink: 0;
-
+    height: 215px;
 }
 .cardcontent{
     display: flex;
