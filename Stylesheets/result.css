@@ -6,11 +6,13 @@
     border-radius: 50px;
     color: var(--midtonebrown);
     margin-top: 10px;
+    
 }
 
 .resultcontainer{
     margin-top: 100px;
     padding: 0px 5%;
+    
 }
 
 .searchagain{
@@ -25,7 +27,7 @@
 
 }
 .resultcards{
-    padding: 40px 40px 0px 0px;
+    padding: 10px 40px 0px 0px;
     gap: 20px;
 }
 
@@ -39,3 +41,16 @@
     
 }
 
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    display: inline-block;
+}
+
+.nav-link {
+    text-align: center;
+    margin-bottom: 0px; 
+    color:black;
+}
