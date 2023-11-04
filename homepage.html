@@ -40,6 +40,8 @@
                 </div>
             </div>
             <div class="cards">
+                <!-- Replace with php code that loops through db and generates these
+                'card' divs -->
                 <div class="card">
                     <div class="thumbnail">
                         <img src="Images/thumbnaildemo.png" >
@@ -55,13 +57,33 @@
                             We ended up talking for a pretty long time, and he was definitely flirting.
                             I was still trying to decide...
                         </div>
-                        <div class="cardcategories">
-                            DATING
-                        </div>
+                        <div class="cardcategory">
+                            <p class="caption">DATING</p>
+                        </div>                       
                     </div>
-
-
                 </div>
+
+                <hr />
+
+                <div class="card">
+                    <div class="thumbnail">
+                        <img class="cover" src="Images/loika_170416.jpeg" >
+                    </div>
+                    <div class="cardcontent">
+                        <div class="carddate">NOV 2,2023</div>
+                        <div class="card-title">
+                            is it a red flag if?
+                        </div>
+                        <div class="cardtext">
+                            Dear writers,
+                        </div>
+                        <div class="cardcategory">
+                            <p class="caption">DATING</p>
+                        </div>                       
+                    </div>
+                </div>
+
+                <hr />
 
             </div>
         </div>
@@ -77,23 +99,30 @@
                         <div>
                             <input type="submit" value="Submit" class = "submitbutton">
                         </div>
-
-
                     </form>
                 </div>
             </div>
             <div class="selectcatergories">
                 <div class=subtitle>Or, pick a flavor...</div>
-                <div>
-                    <div class="cardcategories">
-                        DATING
+                <div class = "categoriesparent">
+                    <!-- Replace with php loop that dynamically
+                    adds categories -->
+                    <div class="cardcategory">
+                        <p class="caption">DATING</p>
                     </div>
-                </div>
-                <div>
-                    + MORE
-                </div>
-
+                    <div class="cardcategory">
+                        <p class="caption">FAMILY</p>
+                    </div>
+                    <div class="cardcategory">
+                        <p class="caption">WORK</p>
+                    </div>
+                    <div class="cardcategory">
+                        <p class="caption">FRIENDS</p>
+                    </div>
+                    <p class="caption"> + MORE </p>
+                <div>   
             </div>
+        </div>
         </div>
     </div>
 </div>

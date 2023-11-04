@@ -83,6 +83,12 @@
     font-size: 18px;
 }
 
+.caption{
+    font-family: SF Pro Display;
+    font-size: 14px;
+    line-height: 0;
+}
+
 
 /* Default page style */
 body {
@@ -95,6 +101,13 @@ body {
 }
 
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--offwhiteshadow);
+    padding: 0;
+}
 
 
 

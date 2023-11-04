@@ -1,38 +1,53 @@
-
 .cards{
     padding: 40px 20px 0px 0px;
+    gap: 20px;
 }
+
 .card{
-    padding-bottom: 20px;
     display: flex;
-    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    
 }
+
+/* I'm struggling to find a way to make the thumbnail height stretch to the full height of the 
+content and NOT just stretch to its full height.. */
 .thumbnail {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 225px;
+    max-height: 300px; /* This is a terrible solution but it'll do for now*/
+    flex-direction: column;
+    align-self: stretch;
     overflow: hidden;
+}
 
+.cover {
+    object-fit: cover;
 }
-.thumbnail img {
-    flex-shrink: 0;
-    height: 215px;
-}
+
 .cardcontent{
     display: flex;
     flex-direction: column;
-    padding: 0px 0px 0px 20px;
-
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
 }
+
 .cardtext{
-padding: 10px 0px;
+    padding: 10px 0px;
 }
 
-.cardcategories{
+/* Represents a SINGLE category bubble */
+.cardcategory{ 
     display: flex;
+    flex-direction: row;
     text-align: center;
-    flex-basis: fit-content;
-    padding: 8px 12px;
+    width:fit-content;
+
+    padding: 2px 8px;
+    line-height: 0;
+
     border: 1px var(--pink);
     border-style: solid ;
     border-radius: 50px;
