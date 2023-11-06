@@ -129,6 +129,6 @@ input[type=text] {
 
 .card-anchor:hover {
     text-decoration: none;
+    color: inherit;
 }
-
 

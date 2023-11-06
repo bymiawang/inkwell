@@ -81,7 +81,9 @@ if ($mysql->connect_error) {
 <body>
 <div class = navbar>
     <div id = logosearch>
-        <div id = inkwell><em>Inkwell</em></div>
+        <a href="homepage.php" style="text-decoration: none; color: inherit;">
+            <div id="inkwell"><em>Inkwell</em></div>
+        </a>
         <a href="searchpage.php"><button type="button" class = searchbutton>
                 Search
             </button></a>
