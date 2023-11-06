@@ -122,3 +122,13 @@ input[type=text] {
     color: var(--brown);
 }
 
+.card-anchor {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-anchor:hover {
+    text-decoration: none;
+}
+
+

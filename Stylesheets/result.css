@@ -46,11 +46,19 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    display: inline-block;
 }
 
 .nav-link {
     text-align: center;
     margin-bottom: 0px; 
     color:black;
+}
+
+.card-anchor {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-anchor:hover {
+    text-decoration: none;
 }
