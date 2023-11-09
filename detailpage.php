@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
     $submission_text = 'No text found for this submission.';
 }
 
-$stmt->close();
+$stmt->close(); // change later
 $mysql->close();
 
 ?>
