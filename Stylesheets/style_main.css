@@ -15,41 +15,41 @@
 /* PP EDITORIAL NEW */
 @font-face {
     font-family: PP Editorial New;
-    src: url(Fonts/PPEditorialNew-Regular.ttf);
+    src: url(../Fonts/PPEditorialNew-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: PP Editorial New;
-    src: url(Fonts/PPEditorialNew-Regular.ttf);
+    src: url(../Fonts/PPEditorialNew-Regular.ttf);
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: PP Editorial New;
-    src: url(Fonts/PPEditorialNew-Thin.ttf);
+    src: url(../Fonts/PPEditorialNew-Thin.ttf);
     font-weight: lighter;
 }
 
 /* SF PRO */
 @font-face {
     font-family: SF Pro Display;
-    src: url(Fonts/SF-Pro-Display-Regular.otf);
+    src: url(../Fonts/SF-Pro-Display-Regular.otf);
     font-weight: normal;
 }
 
 @font-face {
     font-family: SF Pro Display;
-    src: url(Fonts/SF-Pro-Display-RegularItalic.otf);
+    src: url(../Fonts/SF-Pro-Display-RegularItalic.otf);
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: SF Pro Display;
-    src: url(Fonts/SF-Pro-Display-Semibold.otf);
+    src: url(../Fonts/SF-Pro-Display-Semibold.otf);
     font-weight: bold;
 }
 
