@@ -37,7 +37,6 @@ $mysql->close();
     <!-- Include your stylesheets here -->
 </head>
 <body>
-<h1>Submission Text</h1>
 <p><?= nl2br(htmlspecialchars($submission_text)) ?></p>
 <!-- Add navigation or other content here -->
 </body>
