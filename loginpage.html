@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Inkwell Search</title>
+    <link rel="stylesheet" href="Stylesheets/style_main.css">
+    <link rel="stylesheet" href="Stylesheets/navbar.css">
+
+    <style>
+
+        .flexcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 16%;
+        }
+
+        .entertext {
+            --padding: 14px;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--padding);
+            border-radius: 28px;
+            border: solid;
+            border-color: var(--offwhiteshadow);
+            background: white;
+            width: 500px;
+        }
+
+        .signup-prompt {
+            font-family: "PP Editorial New";
+            font-size: 14pt;
+        }
+
+        .signup-button {
+            border: none;
+            background: none;
+            margin-left: -2.5%;
+            font-family: "PP Editorial New";
+            font-size: 14pt;
+            text-decoration: underline;
+            color: #333333;
+        }
+
+            .signup-button:hover {
+                text-decoration: none;
+                color: #554b41;
+            }
+
+        .search-input {
+            font-size: 16px;
+            margin-left: var(--padding);
+            color: #333333;
+            outline: none;
+            border: none;
+            background: transparent;
+            flex: 1;
+        }
+
+        .header {
+            font-family: Helvetica;
+            font-size: 18px;
+        }
+
+        .inputbars {
+            margin-top: -2%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class = navbar>
+    <div id = logosearch>
+        <a href="homepage.php" style="text-decoration: none; color: inherit;">
+            <div id="inkwell"><em>Inkwell</em></div>
+        </a>
+        <a href="searchpage.php"><button type="button" class = searchbutton>
+            Search
+        </button></a>
+    </div>
+    <div>
+        <a href="signup.html"><button type="button" class = signup>
+            SIGN UP
+        </button></a>
+        <a href="login.html"><button type="button" class = login>
+            LOG IN
+        </button></a>
+    </div>
+</div>
+
+<!-- Form -->
+<form>
+    <div class="flexcontainer">
+        <div class="title">
+            welcome back!
+        </div>
+        <br><br>
+
+        <div class="inputbars">
+            <!-- email -->
+            <div>
+                <p class="header"><strong>email</strong><br></p>
+                <div class="entertext">
+                    <input class="search-input" type="search" name="keyword" >
+                </div>
+            </div>
+
+            <!-- password -->
+            <div>
+                <p class="header"><strong>password</strong><br></p>
+                <div class="entertext">
+                    <input class="search-input" type="search" name="keyword" >
+                </div>
+            </div>
+        <br>
+        </div>
+
+        <input type="submit" class="login" value="LOG IN">
+
+        <p class="signup-prompt">
+            don't have an account?
+            <a href="signuppage.html"><button type="button" class="signup-button">
+            sign up
+            </button></a>
+        </p>
+
+    </div>
+
+</form>
+
+
+
+</body>
+</html>
