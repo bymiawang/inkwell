@@ -13,7 +13,44 @@
             }
 
             .flexcontainer-form {
+                display: flex;
+                flex-direction: column;
+                /* align-items: center; */
+                justify-content: center;
+                margin: auto;
+                margin-top: 16%;
+            }
 
+            .entertext {
+                --padding: 14px;
+                width: max-content;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: var(--padding);
+                border-radius: 28px;
+                border: solid;
+                border-color: var(--offwhiteshadow);
+                background: white;
+                width: 450px;
+            }
+
+            .search-input {
+                font-size: 16px;
+                margin-left: var(--padding);
+                color: #333333;
+                outline: none;
+                border: none;
+                background: transparent;
+                flex: 1;
+            }
+
+            .inputbars {
+                margin-top: -2%;
+            }
+
+            .flexcontainer-img {
+                
             }
 
         </style>
@@ -42,9 +79,44 @@
         <!-- Big flex container to place the form on the left and the image on the right -->
         <div class="flexcontainer-big">
 
-            <!-- Fom flex container -->
+            <!-- Form flex container -->
             <div class="flexcontainer-form">
-                
+
+                <div class="title">
+                    create account
+                </div>
+                <br><br>
+
+                <div class="inputbars">
+                    <!-- full name -->
+                    <div>
+                        <p class="header"><strong>full name</strong><br></p>
+                        <div class="entertext">
+                            <input class="search-input" type="search" name="keyword" >
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div>
+                        <p class="header"><strong>email</strong><br></p>
+                        <div class="entertext">
+                            <input class="search-input" type="search" name="keyword" >
+                        </div>
+                    </div>
+
+                    <!-- password -->
+                    <div>
+                        <p class="header"><strong>password</strong><br></p>
+                        <div class="entertext">
+                            <input class="search-input" type="search" name="keyword" >
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="flexcontainer-img">
+
             </div>
 
         </div>
