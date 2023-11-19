@@ -6,6 +6,14 @@
     color: var(--offwhite);
     max-width: 200px;
 }
+.delete{
+    padding: 10px 20px;
+    background-color: var(--offwhite);
+    border: 1px var(--brown);
+    border-radius: 4px;
+    color: var(--brown);
+    max-width: 200px;
+}
 .writercard{
     display: flex;
     flex-direction: row;
@@ -66,4 +74,9 @@
     border: none;
     background: transparent;
     flex: 1;
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
