@@ -14,6 +14,7 @@
     justify-content: space-between;
     max-width: 1200px;
 }
+
 #logosearch{
     display: flex;
     flex-direction: row;
@@ -28,14 +29,11 @@
 }
 
 .searchbutton{
-    padding: 20px 40px;
-    background-color: white;
-    border: 1px var(--offwhiteshadow);
-    border-style: solid ;
-    border-radius: 50px;
+
+    border: none;
+    background-color: var(--offwhite);
     color: var(--midtonebrown);
 }
-
 
 .signup{
     padding: 10px 20px;
@@ -44,10 +42,17 @@
     border-radius: 4px;
     color: var(--offwhite);
 }
+
 .login{
     padding: 10px 20px;
     background-color: var(--brown);
     border: 1px var(--brown);
     border-radius: 4px;
     color: var(--offwhite);
+}
+
+.profile_nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

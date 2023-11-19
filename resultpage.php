@@ -55,8 +55,11 @@ $result = $mysql->query($sql);
 if (!$result) {
     die("Error retrieving results: " . $mysql->error);
 }
-?>
 
+// Start session in order to access current user info
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,31 +73,74 @@ if (!$result) {
     <title>Inkwell Result </title>
 </head>
 <body>
-<div class = navbar>
-    <div id = logosearch>
+<div class = "navbar">
+    <div id = "logosearch">
         <a href="homepage.php" style="text-decoration: none; color: inherit;">
             <div id="inkwell"><em>Inkwell</em></div>
         </a>
         <a href="searchpage.php"><button type="button" class = searchbutton>
-                Search
+                <img src="Images/Search%20Icon.png" alt="search icon">
             </button></a>
     </div>
-    <div>
-        <a href="signup.html"><button type="button" class = signup>
-                SIGN UP
-            </button></a>
-        <a href="login.html"><button type="button" class = login>
-                LOG IN
-            </button></a>
-    </div>
+
+    <?php
+
+    // If user is logged in, hide the login buttons
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']){
+        // If user is an admin, display their profile and backend button
+        if($_SESSION["security_level"] == 0){
+            echo "<div class='profile_nav'>
+                    <div>[PFP]</div>
+                    <div>". $_SESSION['user_name'] ."</div>
+                    <div><a href='adminbackend.html'>Admin</a></div>
+                  </div>";
+        }
+        // If user is an writer, display their profile and backend button
+        else if($_SESSION["security_level"] == 1){
+            echo "<div class='profile_nav'>
+                        <div>[PFP]</div>
+                        <div>". $_SESSION['user_name'] ."</div>
+                        <div>Writer</div>
+                      </div>";
+        }
+        // If user is regular user, just display their profile
+        else if($_SESSION["security_level"] == 2) {
+            echo "<div class='profile_nav'>
+                        <div>[PFP]</div>
+                        <div>". $_SESSION['user_name'] ."</div>
+                      </div>";
+        }
+
+        echo "<a href='logout.php'><button type='button' class = signup>
+                            LOGOUT
+                        </button></a>";
+    }
+    else {
+        echo "<div class='login_buttons'>
+                    <a href='signuppage.php'><button type='button' class = signup>
+                            SIGN UP
+                        </button></a>
+                    <a href='loginpage.php'><button type='button' class = login>
+                            LOG IN
+                        </button></a>
+                </div>";
+    }
+    ?>
+
 </div>
 <div class="resultcontainer">
-    <button type="button" class="searchagainbutton">
-        <?= !empty($keyword) ? htmlspecialchars($keyword) : 'Search' ?>
-    </button>
-    <a href="searchpage.php"><button type="button" class = searchagain>
-            SEARCH AGAIN
-        </button></a>
+    <div class="resultsheader">
+        <p class="card-title">You searched for:
+            <?= !empty($keyword) ? htmlspecialchars($keyword) : 'Search' ?>
+        </p>
+        <a href="searchpage.php">
+            <button type="button" class = searchagain>
+                SEARCH AGAIN
+            </button>
+        </a>
+    </div>
+
+
     <div class="resultcards">
         <?php if ($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>

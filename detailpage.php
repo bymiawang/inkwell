@@ -11,6 +11,9 @@ if ($mysql->connect_error) {
     die("Connection failed: " . $mysql->connect_error);
 }
 
+// Start session in order to access current user info
+session_start();
+
 // SQL to get the full submission text
 $sql = "SELECT submission_text FROM inkwell_view WHERE response_id = ?";
 $stmt = $mysql->prepare($sql);

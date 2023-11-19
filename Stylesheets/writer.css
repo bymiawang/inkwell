@@ -75,8 +75,4 @@
     background: transparent;
     flex: 1;
 }
-.profile{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
+

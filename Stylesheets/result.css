@@ -15,6 +15,12 @@
     
 }
 
+.resultsheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .searchagain{
     padding: 10px 20px;
     margin-top: 10px;
@@ -23,8 +29,6 @@
     border-radius: 4px;
     color: var(--offwhite);
     margin-right: 5%;
-    float: right;
-
 }
 .resultcards{
     padding: 10px 40px 0px 0px;
