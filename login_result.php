@@ -3,6 +3,10 @@
 // THIS PAGE STILL NEEDS HTML LOL SORRY! -Elissa
 
 // Check for email submitted, otherwise auto direct to login page.
+if(empty($_REQUEST['email'])){
+    header("Location: loginpage.php");
+}
+
 
 require_once 'config.php'; // Edit with your path to config.php file
 

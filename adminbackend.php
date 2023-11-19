@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+    // Start session in order to access current user info
+    session_start();
+
+    // Check for admin submitted, otherwise auto direct to homepage page.
+    if(isset($_SESSION['security_level']) && $_SESSION['security_level'] != 0){
+        header("Location: homepage.php");
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
