@@ -143,6 +143,7 @@ session_start();
 
 </div>
 
+
 <!-- Form -->
 <form action="login_result.php">
     <div class="flexcontainer">
@@ -174,7 +175,7 @@ session_start();
 
         <p class="signup-prompt">
             don't have an account?
-            <a href="signuppage.html"><button type="button" class="signup-button">
+            <a href="signuppage.php"><button type="button" class="signup-button">
             sign up
             </button></a>
         </p>

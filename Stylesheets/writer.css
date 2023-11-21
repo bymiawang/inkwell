@@ -4,8 +4,9 @@
     border: 1px var(--brown);
     border-radius: 4px;
     color: var(--offwhite);
-    max-width: 200px; 
+    max-width: 200px;
 }
+
 .delete{
     padding: 10px 20px;
     background-color: var(--offwhite);
@@ -14,21 +15,25 @@
     color: var(--brown);
     max-width: 200px;
 }
+
 .writercard{
     display: flex;
     flex-direction: row;
     gap: 50px;
     align-items: center;
 }
+
 .submissionblock{
     padding: 20px 10%;
     background-color: #F1ECE4;
 }
+
 .writerblock{
     display: flex;
     flex-direction: column;
 
 }
+
 .response{
     margin-top: 20px;
     display: flex;
@@ -36,6 +41,7 @@
     gap:20px;
 
 }
+
 .responsetitle{
     display: flex;
     padding: 20px;
@@ -43,6 +49,7 @@
     border-radius: 4px ;
     color: var(--brown);
 }
+
 .responsebody{
     margin-top: 20px;
     display: flex;
@@ -53,6 +60,7 @@
     height: 150px;
     resize: none;
 }
+
 .writercategory {
     --padding: 14px;
     width: max-content;
@@ -66,6 +74,7 @@
     background: white;
     width: 200px;
 }
+
 .search-input {
     font-size: 16px;
     margin-left: var(--padding);

@@ -42,7 +42,7 @@
     </div>
     <div class="resultcards">
         <div class="writercard">
-            <a href="detailpage.php?id=<?= urlencode($row['response_id']) ?>" class="card-anchor">
+            <a href="detailpagebase.php?id=<?= urlencode($row['response_id']) ?>" class="card-anchor">
                 <div class="resultcard">
                     <div class="thumbnail">
                         <img src="Images/thumbnaildemo.png">

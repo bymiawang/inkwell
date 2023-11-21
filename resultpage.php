@@ -146,7 +146,7 @@ session_start();
             <?php while($row = $result->fetch_assoc()): ?>
 <!--                --><?php //// Debugging line to see raw data
 //                echo '<pre>' . print_r($row, true) . '</pre>'; ?>
-                <a href="detailpage.php?id=<?= urlencode($row['response_id']) ?>" class="card-anchor">
+                <a href="detailpagebase.php?id=<?= urlencode($row['response_id']) ?>" class="card-anchor">
                 <div class="resultcard">
                     <div class="thumbnail">
                         <img src="<?= htmlspecialchars($row['imageurl']) ?: 'Images/thumbnaildemo.png' ?>">
