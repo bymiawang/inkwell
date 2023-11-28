@@ -71,7 +71,6 @@ session_start();
                 <img src="Images/Search%20Icon.png" alt="search icon">
             </button></a>
     </div>
-    
 
     <?php
     // If user is logged in, hide the login buttons

@@ -7,7 +7,7 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    
+
 }
 
 /* I'm struggling to find a way to make the thumbnail height stretch to the full height of the 
@@ -39,8 +39,8 @@ content and NOT just stretch to its full height.. */
 }
 
 /* Represents a SINGLE category bubble */
-.cardcategory{ 
-    display: flex;
+.cardcategory{
+    /*display: flex;*/
     flex-direction: row;
     text-align: center;
     width:fit-content;

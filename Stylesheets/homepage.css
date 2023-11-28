@@ -132,3 +132,10 @@ input[type=text] {
     color: inherit;
 }
 
+.submissioncategory {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--offwhiteshadow);
+}
+
