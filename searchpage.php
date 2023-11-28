@@ -18,65 +18,9 @@
     <link rel="stylesheet" href="Stylesheets/style_main.css">
     <link rel="stylesheet" href="Stylesheets/navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="Stylesheets/searchpage.css">
 
     <style>
-
-        .flexcontainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-            margin-top: 16%;
-            /* margin: auto;
-            margin-top: 15%; */
-        }
-
-        /*
-        .searchbar-shell{
-            border: solid;
-            border-color: red;
-            margin-top: 1%;
-        }
-         */
-
-        .searchbar {
-            --padding: 14px;
-            width: max-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--padding);
-            border-radius: 28px;
-            border: solid;
-            border-color: var(--offwhiteshadow);
-            background: white;
-            width: 554px;
-        }
-
-        .search-input {
-            font-size: 16px;
-            margin-left: var(--padding);
-            color: #333333;
-            outline: none;
-            border: none;
-            background: transparent;
-            flex: 1;
-        }
-
-        .search-input::placeholder {
-            color: var(--brown);
-        }
-
-        .search-icon {
-            color: var(--midtonebrown);
-        }
-
-        .header {
-            font-family: Helvetica;
-            font-size: 18px;
-        }
-
     </style>
 
 
