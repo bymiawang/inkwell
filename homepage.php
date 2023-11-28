@@ -58,6 +58,7 @@
                 <img src="Images/Search%20Icon.png" alt="search icon">
             </button></a>
     </div>
+    
 
     <?php
 
