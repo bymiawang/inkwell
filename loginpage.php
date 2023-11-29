@@ -13,74 +13,12 @@ session_start();
     <title>Inkwell Search</title>
     <link rel="stylesheet" href="Stylesheets/style_main.css">
     <link rel="stylesheet" href="Stylesheets/navbar.css">
+    <link rel="stylesheet" href="Stylesheets/loginpage.css">
 
     <!-- Adding js/jquery for login/signup functionality -->
     <script src="http://code.jquery.com/jquery.js"></script>
 
     <style>
-
-        .flexcontainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-            margin-top: 16%;
-        }
-
-        .entertext {
-            --padding: 14px;
-            width: max-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--padding);
-            border-radius: 28px;
-            border: solid;
-            border-color: var(--offwhiteshadow);
-            background: white;
-            width: 500px;
-        }
-
-        .signup-prompt {
-            font-family: "PP Editorial New";
-            font-size: 14pt;
-        }
-
-        .signup-button {
-            border: none;
-            background: none;
-            margin-left: -2.5%;
-            font-family: "PP Editorial New";
-            font-size: 14pt;
-            text-decoration: underline;
-            color: #333333;
-        }
-
-            .signup-button:hover {
-                text-decoration: none;
-                color: #554b41;
-            }
-
-        .search-input {
-            font-size: 16px;
-            margin-left: var(--padding);
-            color: #333333;
-            outline: none;
-            border: none;
-            background: transparent;
-            flex: 1;
-        }
-
-        .header {
-            font-family: Helvetica;
-            font-size: 18px;
-        }
-
-        .inputbars {
-            margin-top: -2%;
-        }
-
     </style>
 </head>
 

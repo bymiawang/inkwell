@@ -13,66 +13,9 @@ session_start();
         <title>Inkwell Search</title>
         <link rel="stylesheet" href="Stylesheets/style_main.css">
         <link rel="stylesheet" href="Stylesheets/navbar.css">
+        <link rel="stylesheet" href="Stylesheets/signuppage.css">
 
         <style>
-            .flexcontainer-big {
-                display: flex;
-                flex-direction: row;
-
-            }
-
-            .flexcontainer-img {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 12%;
-                width: 780px;
-                background-image: url("Images/signuppage.png");
-                background-size: 70%;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            .flexcontainer-form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-top: 12%;
-                margin-left: 10%;
-                width: 550px;
-            }
-
-            .entertext {
-                --padding: 14px;
-                width: max-content;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: var(--padding);
-                border-radius: 28px;
-                border: solid;
-                border-color: var(--offwhiteshadow);
-                background: white;
-                width: 500px;
-            }
-
-            .search-input {
-                font-size: 16px;
-                margin-left: var(--padding);
-                color: #333333;
-                outline: none;
-                border: none;
-                background: transparent;
-                flex: 1;
-            }
-
-            .inputbars {
-                margin-top: -5%;
-            }
-
-
-
         </style>
     </head>
     <body>
@@ -176,6 +119,8 @@ session_start();
                     </div>
 
                     <input type="submit" class="login" value="SIGN UP">
+
+
 
                 </form>
 
