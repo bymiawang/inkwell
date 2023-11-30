@@ -48,7 +48,7 @@ $mysql->close();
     <link rel="stylesheet" href="Stylesheets/navbar.css">
     <link rel="stylesheet" href="Stylesheets/homepage.css">
     <link rel="stylesheet" href="Stylesheets/cards.css">
-    <link rel="stylesheet" href="Stylesheets/detail.css">
+    <link rel="stylesheet" href="Stylesheets/detail1.css">
     <link rel="stylesheet" href="Stylesheets/writer.css">
     <title>Inkwell Write Response </title>
 
@@ -125,13 +125,13 @@ $mysql->close();
     <div class="banner-container">
         <img src="Images/thumbnaildemo.png" alt="Banner Image" class="banner-image">
     </div>
-    <span class="date"><?php echo($submission_date); ?></span>
+    <div class="date"><?php echo($submission_date); ?></div>
     <div class="subtitle" ><?php echo($submission_title); ?></div>
     <div class="subtext">
         <?= nl2br(htmlspecialchars($submission_text)) ?></div>
     <br><hr><br>
     <div class="subtitle" >Writer Response</div>
-    <span class="date"><?php echo($response_date); ?></span>
+    <div class="date"><?php echo($response_date); ?></div>
     <div class="subtext">
         <?php echo($response_text); ?>
     </div>

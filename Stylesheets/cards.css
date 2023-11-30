@@ -1,5 +1,5 @@
 .cards{
-    padding: 40px 20px 0px 0px;
+    padding: 20px 20px 0px 0px;
     gap: 20px;
 }
 
@@ -7,7 +7,7 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
-
+    padding: 10px;
 }
 
 /* I'm struggling to find a way to make the thumbnail height stretch to the full height of the 
@@ -24,6 +24,12 @@ content and NOT just stretch to its full height.. */
 .cover {
     object-fit: cover;
 }
+.carddate {
+    font-family: 'SF Pro Display', sans-serif;
+    color: #8f8a8a;
+    padding: 5px 0px 5px;
+    width: 100%;
+}
 
 .cardcontent{
     display: flex;
@@ -35,7 +41,7 @@ content and NOT just stretch to its full height.. */
 }
 
 .cardtext{
-    padding: 10px 0px;
+    padding: 0px 0px 5px;
 }
 
 /* Represents a SINGLE category bubble */
@@ -45,10 +51,13 @@ content and NOT just stretch to its full height.. */
     text-align: center;
     width:fit-content;
 
-    padding: 2px 8px;
+    padding: 2px 10px;
     line-height: 0;
 
     border: 1px var(--pink);
     border-style: solid ;
     border-radius: 50px;
+}
+a{
+    text-decoration: none;
 }
