@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     padding: var(--padding);
-    border-radius: 28px;
+    border-radius: 8px;
     border: solid;
     border-color: var(--offwhiteshadow);
     background: white;
