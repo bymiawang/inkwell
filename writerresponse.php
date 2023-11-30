@@ -66,7 +66,11 @@ if (!$submissionData) {
         // If user is an admin, display their profile and backend button
         if($_SESSION["security_level"] == 0){
             echo "<div class='profile_nav'>
+<<<<<<< HEAD
                     <div class='pfp'></div>
+=======
+                    <div><a href='editprofile.php'>[PFP]</a></div>
+>>>>>>> a4234a230ef0044d08f7429f5a374f1bb2f16320
                     <div>". $_SESSION['user_name'] . "</div>
                     <div><a href='adminbackend.php'>Admin</a></div>
                   </div>";
