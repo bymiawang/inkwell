@@ -71,6 +71,16 @@ session_start();
     <link rel="stylesheet" href="Stylesheets/cards.css">
     <link rel="stylesheet" href="Stylesheets/result.css">
     <title>Inkwell Result </title>
+
+    <!-- Google tag (gtag.js) for Google Analytics tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ERQ31ZK60Y');
+    </script>
 </head>
 <body>
 <div class = "navbar">

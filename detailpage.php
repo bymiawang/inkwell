@@ -43,14 +43,25 @@ $mysql->close();
 
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="Stylesheets/style_main.css">
-<link rel="stylesheet" href="Stylesheets/navbar.css">
-<link rel="stylesheet" href="Stylesheets/homepage.css">
-<link rel="stylesheet" href="Stylesheets/cards.css">
-<link rel="stylesheet" href="Stylesheets/detail.css">
-<link rel="stylesheet" href="Stylesheets/writer.css">
-<title>Inkwell Write Response </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Stylesheets/style_main.css">
+    <link rel="stylesheet" href="Stylesheets/navbar.css">
+    <link rel="stylesheet" href="Stylesheets/homepage.css">
+    <link rel="stylesheet" href="Stylesheets/cards.css">
+    <link rel="stylesheet" href="Stylesheets/detail.css">
+    <link rel="stylesheet" href="Stylesheets/writer.css">
+    <title>Inkwell Write Response </title>
+
+    <!-- Google tag (gtag.js) for Google Analytics tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ERQ31ZK60Y');
+    </script>
+
 </head>
 <body>
 <div class = "navbar">

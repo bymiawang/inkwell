@@ -14,9 +14,20 @@ session_start();
     <link rel="stylesheet" href="Stylesheets/style_main.css">
     <link rel="stylesheet" href="Stylesheets/navbar.css">
     <link rel="stylesheet" href="Stylesheets/loginpage.css">
+    <title>Inkwell Login</title>
 
     <!-- Adding js/jquery for login/signup functionality -->
     <script src="http://code.jquery.com/jquery.js"></script>
+
+    <!-- Google tag (gtag.js) for Google Analytics tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ERQ31ZK60Y');
+    </script>
 
     <style>
     </style>

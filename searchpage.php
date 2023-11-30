@@ -19,11 +19,19 @@
     <link rel="stylesheet" href="Stylesheets/navbar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="Stylesheets/searchpage.css">
+    <title>Inkwell Search</title>
 
     <style>
     </style>
+    <!-- Google tag (gtag.js) for Google Analytics tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-
+        gtag('config', 'G-ERQ31ZK60Y');
+    </script>
 </head>
 <body>
 <div class = "navbar">

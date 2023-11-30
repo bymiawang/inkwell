@@ -60,6 +60,15 @@ session_start();
             document.getElementById('currentDate').innerText = now.toLocaleDateString('en-US', options);
         }
     </script>
+    <!-- Google tag (gtag.js) for Google Analytics tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ERQ31ZK60Y');
+    </script>
 </head>
 
 <body onload="showCurrentDate()">

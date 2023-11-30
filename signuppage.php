@@ -15,6 +15,18 @@ session_start();
         <link rel="stylesheet" href="Stylesheets/navbar.css">
         <link rel="stylesheet" href="Stylesheets/signuppage.css">
 
+        <title>Inkwell Sign Up</title>
+
+        <!-- Google tag (gtag.js) for Google Analytics tracking -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ERQ31ZK60Y');
+        </script>
+
         <style>
         </style>
     </head>
