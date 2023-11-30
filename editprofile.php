@@ -1,34 +1,69 @@
 <?php
 
-// Start session in order to access current user info
 session_start();
+require_once 'config.php';
+
+$mysql = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check for database connection error
+if ($mysql->connect_error) {
+    die("Connection failed: " . $mysql->connect_error);
+}
+
+// Profile update
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_SESSION['user_name'])) {
+        echo "Session user_name not set";
+    }
+    else {
+        $username = $_SESSION['user_name']; // Use the username stored in the session
+        $newUsername = $_POST['user_name'];
+        $newPassword = $_POST['password'];
+
+        // First, get the user_id from the database based on the username
+        $userIdQuery = "SELECT user_id FROM users WHERE user_name = ?";
+        if ($stmt = $mysql->prepare($userIdQuery)) {
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+
+            if ($row) {
+                $userId = $row['user_id'];
+
+                // SQL to update user's data
+                $updateSql = "UPDATE users SET user_name = ?, password = ? WHERE user_id = ?";
+                if ($stmt = $mysql->prepare($updateSql)) {
+                    $stmt->bind_param("ssi", $newUsername, $newPassword, $userId);
+                    if ($stmt->execute()) {
+                        $_SESSION['user_name'] = $newUsername;
+                    } else {
+                        echo "Error updating profile: " . $stmt->error . "<br />";
+                    }
+                } else {
+                    echo "Error preparing update statement: " . $mysql->error;
+                }
+            } else {
+                echo "User not found";
+            }
+        } else {
+            echo "Error preparing user ID query: " . $mysql->error;
+        }
+    }
+}
+else{
+}
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
-    <title>Inkwell Search</title>
+    <title>Inkwell Edit Profile</title>
     <link rel="stylesheet" href="Stylesheets/style_main.css">
     <link rel="stylesheet" href="Stylesheets/navbar.css">
-    <link rel="stylesheet" href="Stylesheets/loginpage.css">
-    <title>Inkwell Login</title>
-
-    <!-- Adding js/jquery for login/signup functionality -->
-    <script src="http://code.jquery.com/jquery.js"></script>
-
-    <!-- Google tag (gtag.js) for Google Analytics tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ31ZK60Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-ERQ31ZK60Y');
-    </script>
-
+    <link rel="stylesheet" href="Stylesheets/editprofile.css">
     <style>
     </style>
 </head>
@@ -45,7 +80,6 @@ session_start();
                 <img src="Images/Search%20Icon.png" alt="search icon">
             </button></a>
     </div>
-
     <?php
 
     // If user is logged in, hide the login buttons
@@ -53,7 +87,7 @@ session_start();
         // If user is an admin, display their profile and backend button
         if($_SESSION["security_level"] == 0){
             echo "<div class='profile_nav'>
-                    <div><a href='editprofile.php'>[PFP]</a></div>
+                    <div><a href='editprofile.php'><div class='pfp'></div></a></div>
                     <div>". $_SESSION['user_name'] . "</div>
                     <div><a href='adminbackend.php'>Admin</a></div>
                   </div>";
@@ -61,7 +95,7 @@ session_start();
         // If user is an writer, display their profile and backend button
         else if($_SESSION["security_level"] == 1){
             echo "<div class='profile_nav'>
-                        <div>[PFP]</div>
+                        <div><a href='editprofile.php'><div class='pfp'></div></a></div>
                         <div>". $_SESSION['user_name'] ."</div>
                         <div>Writer</div>
                       </div>";
@@ -69,7 +103,7 @@ session_start();
         // If user is regular user, just display their profile
         else if($_SESSION["security_level"] == 2) {
             echo "<div class='profile_nav'>
-                        <div>[PFP]</div>
+                        <div><a href='editprofile.php'><div class='pfp'></div></a></div>
                         <div>". $_SESSION['user_name'] ."</div>
                       </div>";
         }
@@ -89,51 +123,33 @@ session_start();
                 </div>";
     }
     ?>
-
 </div>
 
-
 <!-- Form -->
-<form action="login_result.php">
+<form method="post" action="editprofile.php">
     <div class="flexcontainer">
         <div class="title">
-            welcome back!
+            edit profile
         </div>
         <br><br>
-
         <div class="inputbars">
             <!-- email -->
             <div>
-                <p class="header"><strong>email</strong><br></p>
                 <div class="entertext">
-                    <input class="search-input" type="search" name="email" >
+                    <input class="search-input" type="search" name="user_name" placeholder="username" >
                 </div>
             </div>
-
             <!-- password -->
             <div>
-                <p class="header"><strong>password</strong><br></p>
                 <div class="entertext">
-                    <input class="search-input" type="search" name="password" >
+                    <input class="search-input" type="search" name="password" placeholder="password" >
                 </div>
             </div>
-        <br>
+            <br>
         </div>
-
-        <input type="submit" class="login" value="LOG IN">
-
-        <p class="signup-prompt">
-            don't have an account?
-            <a href="signuppage.php"><button type="button" class="signup-button">
-            sign up
-            </button></a>
-        </p>
-
+        <input type="submit" class="login" value="SUBMIT">
     </div>
-
 </form>
-
-
 
 </body>
 </html>
