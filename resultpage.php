@@ -100,7 +100,7 @@ session_start();
         // If user is an admin, display their profile and backend button
         if($_SESSION["security_level"] == 0){
             echo "<div class='profile_nav'>
-                    <div>[PFP]</div>
+                    <div class='pfp'></div>
                     <div>". $_SESSION['user_name'] . "</div>
                     <div><a href='adminbackend.php'>Admin</a></div>
                   </div>";
@@ -108,7 +108,7 @@ session_start();
         // If user is an writer, display their profile and backend button
         else if($_SESSION["security_level"] == 1){
             echo "<div class='profile_nav'>
-                        <div>[PFP]</div>
+                        <div class='pfp'></div>
                         <div>". $_SESSION['user_name'] ."</div>
                         <div>Writer</div>
                       </div>";
@@ -116,7 +116,7 @@ session_start();
         // If user is regular user, just display their profile
         else if($_SESSION["security_level"] == 2) {
             echo "<div class='profile_nav'>
-                        <div>[PFP]</div>
+                        <div class='pfp'></div>
                         <div>". $_SESSION['user_name'] ."</div>
                       </div>";
         }
