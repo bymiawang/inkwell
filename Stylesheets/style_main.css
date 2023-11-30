@@ -109,5 +109,66 @@ hr {
     padding: 0;
 }
 
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .title {
+        font-family: PP Editorial New;
+        font-size: 100px;
+    }
+
+    .title-thin{
+        font-family: PP Editorial New;
+        font-weight: lighter;
+        font-size: 100px;
+    }
+
+    .card-title{
+        font-family: PP Editorial New;
+        font-size: 50px;
+    }
+
+    .subtitle{
+        font-family: PP Editorial New;
+        font-size: 40px;
+    }
+
+    /* Default text in any page (body) is already this size*/
+    .bodytext{
+        font-family: SF Pro Display;
+        font-size: 24px;
+    }
+
+    .caption{
+        font-family: SF Pro Display;
+        font-size: 20px;
+        line-height: 0;
+    }
+
+
+    /* Default page style */
+    body {
+        font-family: SF Pro Display;
+        font-size: 18px;
+        background-color: var(--offwhite);
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid var(--offwhiteshadow);
+        padding: 0;
+    }
+
+}
+
+
 
 

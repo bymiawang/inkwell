@@ -12,6 +12,8 @@ if ($mysql->connect_error) {
 // Query to get categories
 $category_sql = "SELECT DISTINCT category_name FROM inkwell_view WHERE response_date IS NOT NULL";
 $category_result = $mysql->query($category_sql);
+$category_result2 = $mysql->query($category_sql);
+
 
 // Error logging
 if (!$category_result) {
@@ -20,16 +22,16 @@ if (!$category_result) {
 
 // Check if a category is selected
 if (isset($_GET['category'])) {
-    $selectedCategory = $_GET['category'];
-    // SQL query to filter by the selected category
-    $sql = "SELECT * FROM inkwell_view WHERE category_name = ? AND response_date IS NOT NULL ORDER BY response_date DESC LIMIT 4";
-    $stmt = $mysql->prepare($sql);
-    $stmt->bind_param("s", $selectedCategory);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $selectedCategory = $_REQUEST['category'];
+    // SQL query to filter by the selected category, maximum 5 results for the given category
+    $sql = "SELECT * FROM inkwell_view WHERE category_name = '" . $selectedCategory . "' AND response_date IS NOT NULL ORDER BY response_date DESC LIMIT 5";
+    //$stmt = $mysql->prepare($sql);
+    //$stmt->bind_param("s", $selectedCategory);
+    //$stmt->execute();
+    $result = $mysql->query($sql);
 } else {
     // Original query if no category is selected
-    $sql = "SELECT * FROM inkwell_view ORDER BY response_date DESC LIMIT 4";
+    $sql = "SELECT * FROM inkwell_view ORDER BY response_date DESC LIMIT 5";
     $result = $mysql->query($sql);
 }
 
@@ -117,6 +119,8 @@ session_start();
     ?>
 </div>
 
+<?php //echo $_REQUEST['category']  ?>
+
 <div class="container">
     <div class="main">
         <div class="content">
@@ -186,17 +190,16 @@ session_start();
             <div class="selectcatergories">
                 <div class="subtitle">Or, pick a flavor...</div>
                 <div class="categoriesparent">
-                    <?php if ($category_result->num_rows > 0): ?>
-                        <?php while($category = $category_result->fetch_assoc()): ?>
-                            <!-- Check if categories are displayed here -->
-                            <div class="cardcategory">
-                                <p class="caption"><?= htmlspecialchars($category['category_name']) ?></p>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php else: ?>
-                        <!-- Check if this message shows up -->
-                        <p>No categories found.</p>
-                    <?php endif; ?>
+                    <?php
+                        if ($category_result->num_rows > 0){
+                            while($category = $category_result2->fetch_assoc()){
+                                echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory'><p class='caption'>" . $category['category_name'] . "</p></div></a>";
+                            }
+                        }
+                        else{
+                            echo "<p>No categories found.</p>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

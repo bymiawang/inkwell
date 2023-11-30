@@ -56,3 +56,32 @@
     flex-direction: row;
     gap: 10px;
 }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .navbar {
+        width: 80%;
+        padding: 30px 5% 20px 5%;
+        overflow: hidden;
+        background-color: var(--offwhite);
+        border-bottom: 1px var(--offwhiteshadow);
+        border-style: solid none;
+        border-top: none;
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+    }
+    #inkwell{
+        font-family: PP Editorial New;
+        font-size: 50px;
+        color: var(--midtonebrown);
+    }
+
+}

@@ -139,3 +139,19 @@ input[type=text] {
     border: 1px solid var(--offwhiteshadow);
 }
 
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .container{
+        margin-top: 90px;
+        padding: 0px 5%;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
