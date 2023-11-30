@@ -90,7 +90,7 @@ session_start();
         // If user is an admin, display their profile and backend button
         if($_SESSION["security_level"] == 0){
             echo "<div class='profile_nav'>
-                        <div>[PFP]</div>
+                        <div><a href='editprofile.php'>[PFP]</a></div>
                         <div>". $_SESSION['user_name'] . "</div>
                         <div><a href='adminbackend.php'>Admin</a></div>
                       </div>";
