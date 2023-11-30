@@ -64,10 +64,7 @@
 
 
 /* MOBILE RESPONSIVENESS */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2){
+@media screen and (max-width: 760px){
 
     .title {
         /* what do i do here bc it clashes w/ __ */
@@ -93,13 +90,13 @@ and (-webkit-min-device-pixel-ratio: 2){
         border: solid;
         border-color: var(--offwhiteshadow);
         background: white;
-        width: 650px;
-        height: 90px;
+        width: 350px;
+        height: 35px;
     }
 
     .signup-prompt {
         font-family: "PP Editorial New";
-        font-size: 32pt;
+        font-size: 16pt;
     }
 
     .signup-button {
@@ -107,7 +104,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         background: none;
         margin-left: -2.5%;
         font-family: "PP Editorial New";
-        font-size: 32pt;
+        font-size: 16pt;
         text-decoration: underline;
         color: #333333;
     }
@@ -129,7 +126,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
     .header {
         font-family: Helvetica;
-        font-size: 40px;
+        font-size: 18px;
     }
 
     .inputbars {
