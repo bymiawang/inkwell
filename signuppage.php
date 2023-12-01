@@ -128,11 +128,10 @@ session_start();
                         </div>
 
                         <br>
+
+                        <input type="submit" class="login" value="SIGN UP">
+
                     </div>
-
-                    <input type="submit" class="login" value="SIGN UP">
-
-
 
                 </form>
 
