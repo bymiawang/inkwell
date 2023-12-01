@@ -55,3 +55,21 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
 
 }
+
+#email{
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    color: var(--midtonebrown);
+}
+.submitbutton{
+    display: flex;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    border-radius: 4px;
+    color: var(--offwhite);
+    border-style: solid ;
+    border: 1px var(--blue);
+
+}

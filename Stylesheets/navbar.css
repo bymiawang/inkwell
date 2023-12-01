@@ -64,7 +64,7 @@
 .edit{
     padding: 10px 20px;
     background-color: var(--midtonebrown);
-    border: 1px var(--midtonebrownbrown);
+    border: 1px var(--midtonebrown);
     border-radius: 4px;
     color: var(--offwhite);
 }
@@ -80,6 +80,13 @@
     background-size: cover;
 
     background-image: url('../Images/thumbnaildemo.png');
+}
+.success{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 150px;
+
 }
 
 

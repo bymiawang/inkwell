@@ -137,13 +137,13 @@ $mysql->close();
         <?php echo($response_text); ?>
     </div>
 
-    <br><hr>
+    <br><hr><br/>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="email">Send this column to your email here! </label>
+        <label for="email" class="subtitle">Send this column to your email here! </label>
         <br>
         <input type="email" id="email" name="email" required>
-        <input type="submit" name="submit" value="Send">
+        <input type="submit" name="submit" value="Send" class="submitbutton">
     </form>
 </div>
 
