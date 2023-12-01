@@ -117,7 +117,7 @@ if (!$result) {
                     <a href="writerresponse.php?id=<?= urlencode($row['submission_id']) ?>">
                         <button type="button" class="write">WRITE A RESPONSE</button>
                     </a>
-                    <a href="writerresponse.php?id=<?= urlencode($row['submission_id']) ?>">
+                    <a href="deletesubmission.php?id=<?= urlencode($row['submission_id']) ?>">
                         <button type="button" class="delete">DELETE SUBMISSION</button>
                     </a>
                 </div>
