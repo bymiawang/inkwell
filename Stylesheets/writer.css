@@ -4,16 +4,22 @@
     border: 1px var(--brown);
     border-radius: 4px;
     color: var(--offwhite);
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .delete{
     padding: 10px 20px;
     background-color: var(--offwhite);
-    border: 1px var(--brown);
+    border: 2px solid var(--brown);
     border-radius: 4px;
     color: var(--brown);
-    max-width: 200px;
+    max-width: 150px;
+}
+
+.response-button-container{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
 }
 
 .writercard{
@@ -61,6 +67,14 @@
     resize: none;
 }
 
+.imageurl{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px ;
+    color: var(--brown);
+}
+
 .writercategory {
     --padding: 14px;
     width: max-content;
@@ -84,4 +98,5 @@
     background: transparent;
     flex: 1;
 }
+
 

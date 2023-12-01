@@ -53,7 +53,8 @@
             echo "<div class='profile_nav'>
                     <div><a href='editprofile.php'><div class='pfp'></div></a></div>
                     <div>". $_SESSION['user_name'] . "</div>
-                    <div><a href='adminbackend.php'>Admin</a></div>
+                    <div class='role'>(Admin)</div>
+                    <div><a href='adminbackend.php'><img src='Images/Vector.svg' class='edit'></a></div>
                   </div>";
         }
         // If user is an writer, display their profile and backend button

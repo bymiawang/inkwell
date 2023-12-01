@@ -102,7 +102,7 @@ session_start();
             echo "<div class='profile_nav'>
                             <div><a href='editprofile.php'><div class='pfp'></div></a></div>
                             <div>". $_SESSION['user_name'] ."</div>
-                            <div>Writer</div>
+                            <div class='role'>(Writer)</div>
                           </div>";
         }
         // If user is regular user, just display their profile
