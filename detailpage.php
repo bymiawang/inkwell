@@ -136,6 +136,37 @@ $mysql->close();
         <?php echo($response_text); ?>
     </div>
 
+    <br><hr>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="email">Send this column to your email here! </label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" name="submit" value="Send">
+    </form>
 </div>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+if (!empty($_POST['email'])) {
+$email = $_POST['email'];
+$submission= nl2br(htmlspecialchars($submission_text));
+$response = nl2br(htmlspecialchars($response_text));
+
+$message = "Submission Text:\n$submission\n\nResponse Text:\n$response";
+$subject = "Details from Inkwell";
+$headers = "From: your_email@example.com";
+
+if (mail($email, $subject, $message, $headers)) {
+    echo "<script>alert('Email sent successfully!);</script>";
+} else {
+echo "<script>alert('Failed to send email. Please try again.');</script>";
+}
+} else {
+echo "<script>alert('Email field is empty.');</script>";
+}
+}
+?>
+
 </body>
 </html>
