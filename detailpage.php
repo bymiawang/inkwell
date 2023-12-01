@@ -136,20 +136,29 @@ $mysql->close();
         <?php echo($response_text); ?>
     </div>
 
+    <br><hr>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="email">Sent this column your email here! </label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" name="submit" value="Send">
+    </form>
 </div>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 if (!empty($_POST['email'])) {
 $email = $_POST['email'];
-$submission_content = nl2br(htmlspecialchars($submission_text)); // Format submission text
-$response_content = nl2br(htmlspecialchars($response_text)); // Format response text
+$submission= nl2br(htmlspecialchars($submission_text));
+$response = nl2br(htmlspecialchars($response_text));
 
-$message = "Submission Text:\n$submission_content\n\nResponse Text:\n$response_content";
+$message = "Submission Text:\n$submission\n\nResponse Text:\n$response";
 $subject = "Details from Inkwell";
-$headers = "From: your_email@example.com"; // Replace with your email address
+$headers = "From: your_email@example.com";
 
 if (mail($email, $subject, $message, $headers)) {
-echo "<script>alert('Email sent successfully!');</script>";
+    echo "<script>alert('Email sent successfully!);</script>";
 } else {
 echo "<script>alert('Failed to send email. Please try again.');</script>";
 }
@@ -158,20 +167,6 @@ echo "<script>alert('Email field is empty.');</script>";
 }
 }
 ?>
-<div class="container">
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <input type="submit" name="submit" value="Send Email">
-    </form>
 
-    <span class="date"><?php echo($submission_date); ?></span>
-    <div class="subtitle"><?php echo($submission_title); ?></div>
-    <div class="subtext"><?= nl2br(htmlspecialchars($submission_text)) ?></div>
-    <br><hr><br>
-    <div class="subtitle">Writer Response</div>
-    <span class="date"><?php echo($response_date); ?></span>
-    <div class="subtext"><?php echo($response_text); ?></div>
-</div>
 </body>
 </html>
