@@ -139,7 +139,7 @@ $mysql->close();
     <br><hr>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="email">Sent this column your email here! </label>
+        <label for="email">Send this column to your email here! </label>
         <br>
         <input type="email" id="email" name="email" required>
         <input type="submit" name="submit" value="Send">
