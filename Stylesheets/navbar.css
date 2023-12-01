@@ -57,6 +57,18 @@
     gap: 10px;
     align-items: center;
 }
+.role{
+    color: var(--midtonebrown);
+}
+
+.edit{
+    padding: 10px 20px;
+    background-color: var(--midtonebrown);
+    border: 1px var(--midtonebrownbrown);
+    border-radius: 4px;
+    color: var(--offwhite);
+}
+
 .pfp{
     display: inline-block;
     width: 50px;

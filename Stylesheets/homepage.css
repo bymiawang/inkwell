@@ -140,6 +140,35 @@ input[type=text] {
 }
 
 @media only screen
+and (max-width: 760px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .container{
+        margin-top: 105px;
+        padding: 0px 5%;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-right: 1px var(--offwhiteshadow);
+        border-style: none;
+    }
+    .sidebar{
+        padding: 40px 40px ;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        width: 90%;
+    }
+
+}
+
+@media only screen
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2) {
 
