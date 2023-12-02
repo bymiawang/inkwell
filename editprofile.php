@@ -3,6 +3,12 @@
 session_start();
 require_once 'config.php';
 
+// Check if user is logged in
+if (!isset($_SESSION['logged_in'])){
+    header("Location: loginpage.php"); // Redirect to login page
+    exit;
+}
+
 $mysql = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Check for database connection error

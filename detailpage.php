@@ -133,7 +133,7 @@ $stmt->close(); // change later
 
 <div class="container">
 
-    <a href="resultpage.php">< Back</a>
+    <a href="resultpage.php">< Back to Search</a>
 
     <!-- EMAIL FUNCTIONALITY -->
     <?php
