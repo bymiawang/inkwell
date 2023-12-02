@@ -58,6 +58,14 @@ content and NOT just stretch to its full height.. */
     border-style: solid ;
     border-radius: 50px;
 }
+
+.selected{
+    background-color: var(--pink);
+    color: var(--offwhite);
+}
+
+
+
 a{
     text-decoration: none;
     color:black;
