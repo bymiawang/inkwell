@@ -115,63 +115,63 @@ $stmt->close(); // change later
     </div>
     <div class="date"><?php echo($submission_date); ?></div>
 
-    <!-- LIKING FUNCTIONALITY -->
-    <?php
-    // Check if user has already liked this post or not
-    $likedalready_sql = "SELECT COUNT(*) from liked_posts WHERE user_id=" . $_SESSION['user_id'] . " AND submission_id=" . $submission_id;
-    $likedlaready = $mysql->query($likedalready_sql);
-    $likedlareadydata = $likedlaready->fetch_assoc();
+    <div class="likes">
+        <!-- LIKING FUNCTIONALITY -->
+        <?php
+        // Check if user has already liked this post or not
+        $likedalready_sql = "SELECT COUNT(*) from liked_posts WHERE user_id=" . $_SESSION['user_id'] . " AND submission_id=" . $submission_id;
+        $likedlaready = $mysql->query($likedalready_sql);
+        $likedlareadydata = $likedlaready->fetch_assoc();
 
-    // If they've already liked the post, just print out a filled heart
-    // Implement unliking functionality in the future
-    if ($likedlareadydata['COUNT(*)'] > 0){
-        $image = 'Images/heart.png';
-        echo "<img src='" . $image . "'>";
-    }
-    // If they haven't already liked the post, print out a unfilled heart and let them like the post
-    else {
-        $image = 'Images/heart-outline.png';
-
-        // Only print out the like button if the user is logged in
-        if (isset($_SESSION['logged_in'])){
-            // If the like button has been pressed (post & liked variable is set), then add that post
-            // to the users liked posts in the database.
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['liked'])) {
-                // Only update the database if they haven't already liked this post
-                 if (!$likedlareadydata['COUNT(*)'] > 0){
-                    $updateSql = "INSERT INTO `liked_posts` (`like_id`, `user_id`, `submission_id`) VALUES (NULL, '" . $_SESSION['user_id'] . "', '" . $submission_id .  "');";
-                    $results = $mysql->query($updateSql);
-                    if (!$results) {
-                        echo "Error liking post: " . $stmt->error . "<br />";
-                    }
-
-                }
-            }
-
-            echo "<div><form method='post' action='" . $currenturl . "&liked=1'>"
-                . "<input class='likebutton' type='image' src='"
-                . $image
-                . "' alt='Submit'>"
-                . "</form></div>";
+        // If they've already liked the post, just print out a filled heart
+        // Implement unliking functionality in the future
+        if ($likedlareadydata['COUNT(*)'] > 0){
+            $image = 'Images/heart.png';
+            echo "<img src='" . $image . "'>";
         }
-        // If not logged in
+        // If they haven't already liked the post, print out a unfilled heart and let them like the post
         else {
-            echo "(Sign in to like a post!)";
-        }
-    }
-    ?>
+            $image = 'Images/heart-outline.png';
 
+            // Only print out the like button if the user is logged in
+            if (isset($_SESSION['logged_in'])){
+                // If the like button has been pressed (post & liked variable is set), then add that post
+                // to the users liked posts in the database.
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['liked'])) {
+                    // Only update the database if they haven't already liked this post
+                     if (!$likedlareadydata['COUNT(*)'] > 0){
+                        $updateSql = "INSERT INTO `liked_posts` (`like_id`, `user_id`, `submission_id`) VALUES (NULL, '" . $_SESSION['user_id'] . "', '" . $submission_id .  "');";
+                        $results = $mysql->query($updateSql);
+                        if (!$results) {
+                            echo "Error liking post: " . $stmt->error . "<br />";
+                        }
+                    }
+                }
 
-    <!-- LIKE COUNT -->
-    <?php
-        // Get likecounts for posts with likes
-        $countSql = "SELECT COUNT(*) as likecount from liked_posts WHERE submission_id=" . $submission_id;
-        $likesresult = $mysql->query($countSql);
-        if ($likesresult->num_rows > 0) {
-            $row = $likesresult->fetch_assoc();
-            echo $row['likecount'] . " likes";
+                echo "<div><form method='post' action='" . $currenturl . "&liked=1'>"
+                    . "<input class='likebutton' type='image' src='"
+                    . $image
+                    . "' alt='Submit'>"
+                    . "</form></div>";
+            }
+            // If not logged in
+            else {
+                echo "(Sign in to like a post!)";
+            }
         }
-    ?>
+        ?>
+
+        <!-- LIKE COUNT -->
+        <?php
+            // Get likecounts for posts with likes
+            $countSql = "SELECT COUNT(*) as likecount from liked_posts WHERE submission_id=" . $submission_id;
+            $likesresult = $mysql->query($countSql);
+            if ($likesresult->num_rows > 0) {
+                $row = $likesresult->fetch_assoc();
+                echo $row['likecount'] . " likes";
+            }
+        ?>
+    </div>
 
     <div class="subtitle" ><?php echo($submission_title); ?></div>
     <div class="subtext">

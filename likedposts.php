@@ -46,12 +46,13 @@
     <!-- Navbar -->
     <?php include 'navbar.php';?>
 
+
     <div class="flexcontainer">
         <div class="title">
             liked posts
         </div>
-
-        <div class="resultcards">
+        <div class="resultcontainer">
+            <div class="resultcards">
             <?php if ($result->num_rows > 0): ?>
                 <?php while($row = $result->fetch_assoc()): ?>
                     <!--                --><?php //// Debugging line to see raw data
@@ -80,6 +81,7 @@
             <?php else: ?>
                 <p>No results found.</p>
             <?php endif; ?>
+        </div>
         </div>
 
     </div>

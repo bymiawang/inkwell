@@ -73,3 +73,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
     border: 1px var(--blue);
 
 }
+
+.likes{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: var(--midtonebrown);
+    width: fit-content;
+}
