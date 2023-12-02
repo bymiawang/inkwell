@@ -125,6 +125,13 @@ else{
     ?>
 </div>
 
+
+<div class="flexcontainer">
+    <a href='likedposts.php'>
+        <button type='button' class='signup'> VIEW LIKED POSTS </button>
+    </a>
+</div>
+
 <!-- Form -->
 <form method="post" action="editprofile.php">
     <div class="flexcontainer">
@@ -150,6 +157,8 @@ else{
         <input type="submit" class="login" value="SUBMIT">
     </div>
 </form>
+
+
 
 </body>
 </html>

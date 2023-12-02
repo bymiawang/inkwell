@@ -103,6 +103,7 @@ if ($mysql->connect_error) {
 $sql = "SELECT * FROM users WHERE user_email = '" . $_REQUEST["email"] . "'";
 $results = $mysql->query($sql);
 
+
 // Check for errors in execution
 if (!$results) {
     die("Error retrieving results: " . $mysql->error);
@@ -117,6 +118,7 @@ if ($results->num_rows > 0) {
         # Start a session
 
         $_SESSION["user_name"] = $row['user_name'];
+        $_SESSION["user_id"] = $row['user_id'];
         $_SESSION["logged_in"] = True;
         $_SESSION["security_level"] = $row['security_level'];
 

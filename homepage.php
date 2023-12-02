@@ -35,6 +35,8 @@ if (isset($_GET['category'])) {
     $result = $mysql->query($sql);
 }
 
+
+
 if (!$result) {
     die("Error retrieving results: " . $mysql->error);
 }
@@ -51,8 +53,7 @@ session_start();
     <link rel="stylesheet" href="Stylesheets/homepage.css">
     <link rel="stylesheet" href="Stylesheets/cards.css">
     <title>Inkwell Home</title>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="Scripts/home.js"></script>
+
     <script>
         function showCurrentDate() {
             const now = new Date();
@@ -72,6 +73,8 @@ session_start();
 </head>
 
 <body onload="showCurrentDate()">
+
+<!-- NAV -->
 <div class="navbar">
     <!-- Navbar content -->
     <div id="logosearch">
@@ -139,8 +142,8 @@ session_start();
                 <div class="mastheadtext">
                     <div id="currentDate"></div>
                     <div class="title-thin">
-                        feeling thirsty?<br/>
-                        here’s some <em>tea.</em>
+                        feeling thirsty? <br/>
+                        here’s some <em> tea. </em>
                     </div>
                 </div>
             </div>
