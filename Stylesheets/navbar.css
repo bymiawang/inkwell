@@ -29,7 +29,6 @@
 }
 
 .searchbutton{
-
     border: none;
     background-color: var(--offwhite);
     color: var(--midtonebrown);
@@ -87,6 +86,10 @@
     justify-content: center;
     padding-top: 150px;
 
+}
+
+.label{
+    color: var(--midtonebrown);
 }
 
 

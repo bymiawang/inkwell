@@ -34,23 +34,9 @@ if (!$result) {
     <title>Inkwell Writer </title>
 </head>
 <body>
-<div class = navbar>
-    <div id = logosearch>
-        <a href="homepage.php" style="text-decoration: none; color: inherit;">
-            <div id="inkwell"><em>Inkwell</em></div>
-        </a>
-        <a href="searchpage.php"><button type="button" class = searchbutton>
-                Search
-            </button></a>
-    </div>
-    <div class="profile">
-        <div>pfp</div>
-        <div>Username</div>
-        <div>Role</div>
 
-    </div>
-
-</div>
+<!-- Navbar -->
+<?php include 'navbar.php';?>
 
 <div class="resultcontainer">
     <?php if ($result->num_rows > 0): ?>
