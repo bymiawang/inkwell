@@ -39,7 +39,9 @@ if (!$result) {
 <!-- Navbar -->
 <?php include 'navbar.php';?>
 
+
 <div class="resultcontainer">
+    <a href="googleanalytics.php"><div class="subtitle" style="text-decoration: underline">Page to Google Analytics</div></a>
     <?php if ($result->num_rows > 0): ?>
         <?php while($row = $result->fetch_assoc()): ?>
             <div class="writercard">
