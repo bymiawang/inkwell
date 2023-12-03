@@ -63,3 +63,11 @@
 .card-anchor:hover {
     text-decoration: none;
 }
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px 0px 30px;
+
+}
