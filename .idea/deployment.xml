@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" filePermissions="493" folderPermissions="493" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="acad276 (1)">
+      <paths name="acad276server">
         <serverdata>
           <mappings>
             <mapping deploy="/public_html" local="$PROJECT_DIR$" web="/" />
