@@ -30,7 +30,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             header("Location: adminbackend.php?deletion=success");
         } else {
             // Handle error in execution
-            echo "Error executing query: " . $stmt->error;
+            echo "Error executing query: " . $stmt->error; 
         }
         $stmt->close();
     } else {
