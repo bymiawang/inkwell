@@ -151,7 +151,11 @@ session_start();
                     <?php
                         if ($category_result->num_rows > 0){
                             while($category = $category_result2->fetch_assoc()){
-                                echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory'><p class='caption'>" . $category['category_name'] . "</p></div></a>";
+                                if($category['category_name'] == $selectedCategory){
+                                    echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory selected'><p class='caption'>" . $category['category_name'] . "</p></div></a>";
+                                } else {
+                                    echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory'><p class='caption'>" . $category['category_name'] . "</p></div></a>";
+                                }
                             }
                         }
                         else{
