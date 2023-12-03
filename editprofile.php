@@ -88,7 +88,7 @@ else{
 
 <!-- Form -->
 <form method="post" action="editprofile.php">
-    <div class="flexcontainer">
+    <div class="flexcontainer2">
         <div class="title">
             edit profile
         </div>

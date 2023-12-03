@@ -180,7 +180,8 @@ $stmt->close(); // change later
 
     <br><hr><br/>
 
-    <form method="post" action="<?php echo $currenturl ?>">
+
+    <form class ="sendemail" method="post" action="<?php echo $currenturl ?>">
         <label for="email" class="subtitle">Send this column to your email here! </label>
         <br>
         <input type="email" id="email" name="email" required>

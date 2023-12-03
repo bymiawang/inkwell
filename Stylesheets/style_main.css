@@ -108,6 +108,9 @@ hr {
     border-top: 1px solid var(--offwhiteshadow);
     padding: 0;
 }
+a{
+    text-decoration: none;
+}
 
 
 @media only screen
@@ -157,6 +160,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         display: flex;
         flex-direction: column;
     }
+
 
 
     hr {

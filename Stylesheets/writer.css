@@ -99,4 +99,27 @@
     flex: 1;
 }
 
+@media only screen
+and (max-device-width: 480px)
+{
+    .write{
+        padding: 10px 20px;
+        background-color: var(--brown);
+        border: 1px var(--brown);
+        border-radius: 4px;
+        color: var(--offwhite);
+        max-width: 150px;
+        font-size: 18px;
+    }
+
+    .delete{
+        padding: 10px 20px;
+        background-color: var(--offwhite);
+        border: 2px solid var(--brown);
+        border-radius: 4px;
+        color: var(--brown);
+        max-width: 150px;
+        font-size: 18px;
+    }
+}
 
