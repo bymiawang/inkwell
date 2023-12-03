@@ -47,7 +47,6 @@ $stmt->close(); // change later
 
 ?>
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,7 +56,7 @@ $stmt->close(); // change later
     <link rel="stylesheet" href="Stylesheets/cards.css">
     <link rel="stylesheet" href="Stylesheets/detail1.css">
     <link rel="stylesheet" href="Stylesheets/writer.css">
-    <title>Inkwell Write Response </title>
+    <title> Inkwell Write Response </title>
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="Scripts/home.js"></script>
@@ -105,10 +104,8 @@ $stmt->close(); // change later
                 echo "Email field is empty.";
             }
         }
-
     }
     ?>
-
 
     <div class="banner-container">
         <img src="Images/thumbnaildemo.png" alt="Banner Image" class="banner-image">
@@ -118,28 +115,27 @@ $stmt->close(); // change later
     <div class="likes">
         <!-- LIKING FUNCTIONALITY -->
         <?php
-        // Check if user has already liked this post or not
-        $likedalready_sql = "SELECT COUNT(*) from liked_posts WHERE user_id=" . $_SESSION['user_id'] . " AND submission_id=" . $submission_id;
-        $likedlaready = $mysql->query($likedalready_sql);
-        $likedlareadydata = $likedlaready->fetch_assoc();
+        if(isset($_SESSION['logged_in'])){
+            // Check if user has already liked this post or not
+            $likedalready_sql = "SELECT COUNT(*) from liked_posts WHERE user_id=" . $_SESSION['user_id'] . " AND submission_id=" . $submission_id;
+            $likedlaready = $mysql->query($likedalready_sql);
+            $likedlareadydata = $likedlaready->fetch_assoc();
 
-        // If they've already liked the post, just print out a filled heart
-        // Implement unliking functionality in the future
-        if ($likedlareadydata['COUNT(*)'] > 0){
-            $image = 'Images/heart.png';
-            echo "<img src='" . $image . "'>";
-        }
-        // If they haven't already liked the post, print out a unfilled heart and let them like the post
-        else {
-            $image = 'Images/heart-outline.png';
+            // If they've already liked the post, just print out a filled heart
+            // Implement unliking functionality in the future
+            if ($likedlareadydata['COUNT(*)'] > 0){
+                $image = 'Images/heart.png';
+                echo "<img src='" . $image . "'>";
+            }
+            // If they haven't already liked the post, print out a unfilled heart and let them like the post
+            else {
+                $image = 'Images/heart-outline.png';
 
-            // Only print out the like button if the user is logged in
-            if (isset($_SESSION['logged_in'])){
                 // If the like button has been pressed (post & liked variable is set), then add that post
                 // to the users liked posts in the database.
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['liked'])) {
                     // Only update the database if they haven't already liked this post
-                     if (!$likedlareadydata['COUNT(*)'] > 0){
+                    if (!$likedlareadydata['COUNT(*)'] > 0){
                         $updateSql = "INSERT INTO `liked_posts` (`like_id`, `user_id`, `submission_id`) VALUES (NULL, '" . $_SESSION['user_id'] . "', '" . $submission_id .  "');";
                         $results = $mysql->query($updateSql);
                         if (!$results) {
@@ -154,10 +150,9 @@ $stmt->close(); // change later
                     . "' alt='Submit'>"
                     . "</form></div>";
             }
-            // If not logged in
-            else {
-                echo "(Sign in to like a post!)";
-            }
+        }
+        else{
+            echo "(Sign in to like a post!)";
         }
         ?>
 

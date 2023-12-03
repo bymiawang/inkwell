@@ -13,7 +13,7 @@ if ($mysql->connect_error) {
 $category_sql = "SELECT DISTINCT category_name FROM inkwell_view WHERE response_date IS NOT NULL";
 $category_result = $mysql->query($category_sql);
 $category_result2 = $mysql->query($category_sql);
-
+$selectedCategory = "";
 
 // Error logging
 if (!$category_result) {
@@ -151,7 +151,7 @@ session_start();
                     <?php
                         if ($category_result->num_rows > 0){
                             while($category = $category_result2->fetch_assoc()){
-                                if($category['category_name'] == $selectedCategory){
+                                if($selectedCategory != "" && $category['category_name'] == $selectedCategory){
                                     echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory selected'><p class='caption'>" . $category['category_name'] . "</p></div></a>";
                                 } else {
                                     echo "<a href='homepage.php?category=". $category['category_name'] . "'><div class='cardcategory'><p class='caption'>" . $category['category_name'] . "</p></div></a>";

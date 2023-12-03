@@ -39,6 +39,7 @@
         <link rel="stylesheet" href="Stylesheets/cards.css">
         <style>
         </style>
+        <title> Liked Posts </title>
     </head>
 
     <body>
