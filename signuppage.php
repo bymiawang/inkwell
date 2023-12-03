@@ -76,7 +76,9 @@ session_start();
 
                         <br>
 
-                        <input type="submit" class="login" value="SIGN UP">
+                        <div class="centerbtn">
+                            <input type="submit" class="login" value="SIGN UP">
+                        </div>
 
                     </div>
 
