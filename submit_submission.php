@@ -1,12 +1,37 @@
 <?php
 
-require_once 'config.php'; // Path to your config.php file
+session_start();
 
-// Database connection
+require_once 'config.php'; // Edit with your path to config.php file
 $mysql = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
+// Check for connection errors
 if ($mysql->connect_error) {
     die("Connection failed: " . $mysql->connect_error);
+}
+
+// Check if the form was submitted and the user is logged in
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["user_id"])) {
+    // Collect and sanitize input data
+    $user_id = $_SESSION["user_id"];
+    $submission_title = mysqli_real_escape_string($mysql, $_POST['submission_title']);
+    $submission_text = mysqli_real_escape_string($mysql, $_POST['submission_text']);
+    $category_id = mysqli_real_escape_string($mysql, $_POST['category_name']);
+    $responded = 0; // Assuming 'responded' is a status flag and is set to 0 initially
+
+    // Insert data into the database
+    $stmt = $mysql->prepare("INSERT INTO submissions (user_id, submission_title, submission_text, submission_date, category_id, responded) VALUES (?, ?, ?, NOW(), ?, ?)");
+    $stmt->bind_param("issii", $user_id, $submission_title, $submission_text, $category_id, $responded);
+
+    // Execute the prepared statement
+    if ($stmt->execute()) {
+        echo "New submission created successfully";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    $stmt->close();
+} else {
+    echo "You must be logged in to submit.";
 }
 
 // Query to get categories
